@@ -1,9 +1,5 @@
 import React from "react";
-import enterCode from "../pages/enterCode";
-import enter from "../pages/enterCode.js"
-import {redirect, Route, Routes, useNavigate, withRouter} from "react-router-dom";
-import EnterCode from "../pages/enterCode";
-import themePage from "./themePage";
+import { Route, Routes, useNavigate} from "react-router-dom";
 import JoinRoom from "./JoinRoom";
 const Home = () => {
     let navigate = useNavigate();

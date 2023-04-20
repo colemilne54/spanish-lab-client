@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Route, useNavigate, useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import io from 'socket.io-client';
 import ImageComponent from './generateImage';
 
@@ -25,7 +25,7 @@ function Room() {
     ]
 
     var isDone = false;
-    var displayEnd = (promptIndex+1 === Questions.length) ? true : false;
+    var displayEnd = (promptIndex + 1 === Questions.length) ? true : false;
 
     useEffect(() => {
         socket.emit('joinRoom', roomId);
@@ -36,7 +36,6 @@ function Room() {
 
         socket.on('teacher', () => {
             setIsTeacher(true);
-
         });
 
         socket.on('nextPrompt', () => {
@@ -55,7 +54,7 @@ function Room() {
     const handleNextPrompt = () => {
         popularAnswers.push(popularAnswer());
         console.log(promptIndex + " " + Questions.length)
-        if(promptIndex+1 === Questions.length) {
+        if (promptIndex + 1 === Questions.length) {
             isDone = true;
         } else {
             socket.emit('nextPrompt', roomId);
@@ -66,14 +65,14 @@ function Room() {
         popularAnswers.push(popularAnswer());
         setFinalPrompt(`A cartoon ${popularAnswers[0]} eating a ${popularAnswers[1]} ${popularAnswers[2]}`);
         setShowImage(true);
-    }
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         socket.emit('newAnswer', { roomId, answer: selectedAnswer });
         setSelectedAnswer('');
         setHasAnswered(true);
-      };
+    };
 
     const popularAnswer = () => {
         const counts = {};
@@ -93,52 +92,50 @@ function Room() {
 
     return (
         <div className="roomPage">
-        {showImage ? <ImageComponent prompt={finalPrompt} /> :
-        <div>
-            <div>
-                <h1>Room: {roomId}</h1>
-            </div>
-            <div className="columnDisplay">
-                <h2>Prompt: {Questions[promptIndex].question}</h2>
-                <form className ="question" onSubmit={handleSubmit}>
-                    {Questions[promptIndex].options.map((choice, index) => (
-                        <div key={index}>
-                            <input
-                                key={`prompt-${promptIndex}-choice-${index}`}
-                                type="radio"
-                                id={`choice-${index}`}
-                                name="answer"
-                                value={choice}
-                                onChange={(e) => setSelectedAnswer(e.target.value)}
-                                required
-                            />
-                            <label htmlFor={`choice-${index}`}>{choice}</label>
-                        </div>
-                    ))}
-                    <button className = "secondaryButton" type="submit" disabled={hasAnswered}>Submit Answer</button>
-                </form>
-            </div>
-                <div className="columnDisplay ">
-                    <h2>Popular Answer: {popularAnswer()}</h2>
-                    <h3>All Answers:</h3>
-                    <ul>
-                        {answers.map((answer, index) => (
-                            <li key={index}>{answer}</li>))}
-                    </ul>
+            {showImage ? <ImageComponent prompt={finalPrompt} /> :
+                <div>
+                    <h1>Room: {roomId}</h1>
+                    <div className="columnDisplay">
+                        <h2>Prompt: {Questions[promptIndex].question}</h2>
+                        <form className="question" onSubmit={handleSubmit}>
+                            {Questions[promptIndex].options.map((choice, index) => (
+                                <div key={index}>
+                                    <input
+                                        key={`prompt-${promptIndex}-choice-${index}`}
+                                        type="radio"
+                                        id={`choice-${index}`}
+                                        name="answer"
+                                        value={choice}
+                                        onChange={(e) => setSelectedAnswer(e.target.value)}
+                                        required
+                                    />
+                                    <label htmlFor={`choice-${index}`}>{choice}</label>
+                                </div>
+                            ))}
+                            <button className="secondaryButton" type="submit" disabled={hasAnswered}>Submit Answer</button>
+                        </form>
+                    </div>
+                    <div className="columnDisplay">
+                        <h2>Popular Answer: {popularAnswer()}</h2>
+                        <h3>All Answers:</h3>
+                        <ul>
+                            {answers.map((answer, index) => (
+                                <li key={index}>{answer}</li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="rightAlignedContainer bottomRightButton">
+                        {displayEnd ?
+                            <button class="primaryButton" type="button" onClick={handleEndQuiz}>
+                                End Quiz
+                            </button> :
+                            <button className="primaryButton" type="button" onClick={handleNextPrompt}>
+                                Next Prompt
+                            </button>
+                        }
+                    </div>
                 </div>
-                <div className = "rightAlignedContainer bottomRightButton">
-                {displayEnd ?
-                    <button class = "primaryButton" type="button" onClick={handleEndQuiz}>
-                        End Quiz
-                    </button> :
-                    <button className = "primaryButton" type="button" onClick={handleNextPrompt}>
-                        Next Prompt
-                    </button>
-                }
-                </div>
-            )}
-        </div>
-        }
+            }
         </div>
 
     );
