@@ -1,8 +1,4 @@
 import React from "react";
-import enterCode from "../pages/enterCode";
-import enter from "../pages/enterCode.js"
-import {redirect, Route, Routes, useNavigate, withRouter} from "react-router-dom";
-import EnterCode from "../pages/enterCode";
 const ThemePage = () => {
     return (
         <div className="themePage">

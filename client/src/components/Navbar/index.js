@@ -17,20 +17,20 @@ const Navbar = () => {
                                 <i className="fa fa-caret-down"></i>
                             </button>
                             <div className= "dropdown-content">
-                                <NavLink href="#" to = '/home'>Home</NavLink>
-                                <NavLink href="#" to = "/account">Account</NavLink>
-                                <NavLink href="#" to = '/create-story'>Create Story</NavLink>
-                                <NavLink href= "#" to = '/join-room'>Enter Classroom</NavLink>
+                                <NavLink to='/home'>Home</NavLink>
+                                <NavLink to="/account">Account</NavLink>
+                                <NavLink to='/create-story'>Create Story</NavLink>
+                                <NavLink to='/join-room'>Enter Classroom</NavLink>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <div class = "logoDiv">
+                        <div className="logoDiv">
                             <Logo/>
                         </div>
                     </div>
                     <div className= "rightLogin">
-                        <NavLink class = "" to="/login" activeStyle>
+                        <NavLink to="/login" activeStyle>
                             LOGIN
                         </NavLink>
                     </div>

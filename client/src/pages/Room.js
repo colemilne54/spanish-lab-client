@@ -89,7 +89,6 @@ function Room() {
         return maxValue;
     };
 
-
     return (
         <div className="roomPage">
             {showImage ? <ImageComponent prompt={finalPrompt} /> :
@@ -125,19 +124,22 @@ function Room() {
                         </ul>
                     </div>
                     <div className="rightAlignedContainer bottomRightButton">
-                        {displayEnd ?
-                            <button class="primaryButton" type="button" onClick={handleEndQuiz}>
-                                End Quiz
-                            </button> :
-                            <button className="primaryButton" type="button" onClick={handleNextPrompt}>
-                                Next Prompt
-                            </button>
-                        }
+                    {isTeacher && (
+                            <div>
+                                {displayEnd ?
+                                    <button className="primaryButton" type="button" onClick={handleEndQuiz}>
+                                        End Quiz
+                                    </button> :
+                                    <button className="primaryButton" type="button" onClick={handleNextPrompt}>
+                                        Next Prompt
+                                    </button>
+                                }
+                            </div>
+                        )}
                     </div>
                 </div>
             }
         </div>
-
     );
 }
 

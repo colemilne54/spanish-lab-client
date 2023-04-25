@@ -1,7 +1,6 @@
 import React from "react";
-import {redirect, Route, Routes, useNavigate, withRouter} from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 const CreateStory = () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     let navigate = useNavigate();
     const routeChange = () => {
         navigate('/create-story');
