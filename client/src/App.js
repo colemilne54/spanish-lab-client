@@ -1,5 +1,4 @@
 import React from 'react';
-//import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import JoinRoom from './pages/JoinRoom';
 import Room from "./pages/Room";
 import './App.css';
@@ -11,8 +10,6 @@ import EnterCode from './pages/enterCode';
 import Home from "./pages/home";
 import Account from "./pages/account";
 import CreateStory from "./pages/createStory"
-
-console.log(process.env.REACT_APP_OPENAI_API_KEY);
 
 function App() {
   return (
