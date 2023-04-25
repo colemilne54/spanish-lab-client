@@ -1,5 +1,3 @@
-.App {}
-
 html {
   background: #2F4B5D;
   color: #FFF;
@@ -104,6 +102,19 @@ form {
   border-radius: 5px;
 }
 
+.primaryButton:hover {
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: hsl(205, 52%, 41%);
+  color: #FFFFFF;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .primaryButton:disabled {
   width: 200px;
   padding: 12px 20px;
@@ -114,6 +125,7 @@ form {
   font-size: 16px;
   border: none;
   border-radius: 5px;
+  cursor: not-allowed;
 }
 
 .secondaryButton {
@@ -126,6 +138,32 @@ form {
   font-size: 16px;
   border: none;
   border-radius: 5px;
+}
+
+.secondaryButton:hover {
+  width: 200px;
+  padding: 12px 20px;
+  margin: 20px 0;
+  box-sizing: border-box;
+  background-color: #d9d9d9;
+  color: #459AD7;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.secondaryButton:disabled {
+  width: 200px;
+  padding: 12px 20px;
+  margin: 20px 0;
+  box-sizing: border-box;
+  background-color: #a5a5a5;
+  color: #459AD7;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: not-allowed;
 }
 
 .homePage {
