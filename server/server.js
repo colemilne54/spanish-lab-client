@@ -5,7 +5,7 @@ const cors = require('cors');
 import { Server } from "socket.io";
 const dotenv = require('dotenv').config();
 
-const httpServer = createServer();
+const httpServer = createServer(app);
 
 const socketOptions = {
     cors: {
@@ -87,6 +87,6 @@ io.on('connection', (socket) => {
 
 
 const PORT = process.env.PORT || 3001;
-http.listen(PORT, () => {
+httpServer.listen(PORT, () => {
     console.log(`listening on *:${PORT}`);
 });
