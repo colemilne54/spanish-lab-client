@@ -1,10 +1,17 @@
 const express = require('express');
 const app = express();
-const http = require('http');
+import { createServer } from "http";
 const cors = require('cors');
+import { Server } from "socket.io";
 const dotenv = require('dotenv').config();
 
 const httpServer = createServer();
+
+const socketOptions = {
+    cors: {
+        origin: 'https://spanish-lab-client.vercel.app',
+    }
+};
 
 const options = {
     cors: {
@@ -20,7 +27,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
-const io = require('socket.io')(httpServer, options);
+const io = new Server(httpServer, socketOptions);
 
 app.use('/openai', require('./routes/openaiRoutes'));
 
