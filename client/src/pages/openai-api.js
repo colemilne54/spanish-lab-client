@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://spanish-lab-server.vercel.app/'; // Replace with your server URL in production
+const API_URL = 'https://spanish-lab-server.vercel.app'; // Replace with your server URL in production
 
 const api = axios.create({
   baseURL: API_URL,

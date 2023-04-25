@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import io from 'socket.io-client';
 import ImageComponent from './generateImage';
 
-const socket = io('http://spanish-lab-server.vercel.app');
+const socket = io('https://spanish-lab-server.vercel.app');
 
 const popularAnswers = [];
 
