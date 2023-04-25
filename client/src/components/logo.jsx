@@ -5,7 +5,7 @@ console.log(logo);
 
 function Header() {
     // Import result is the URL of your image
-    return <img src={logo} alt="Logo"  class = "spanishLabLogo" />;
+    return <img src={logo} alt="Logo"  className="spanishLabLogo" />;
 }
 
 export default Header;
