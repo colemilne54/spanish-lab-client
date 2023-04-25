@@ -1,14 +1,10 @@
 const express = require('express');
 const app = express();
-const http = require('http').createServer(app);
+const http = require('http');
 const cors = require('cors');
 const dotenv = require('dotenv').config();
 
-// Enable CORS for all routes
-app.use(cors());
-
-app.use(express.json());
-app.use(express.static('public'));
+const httpServer = createServer();
 
 const options = {
     cors: {
@@ -17,7 +13,14 @@ const options = {
         methods: ['GET', 'POST']
     }
 };
-const io = require('socket.io')(http, options);
+
+// Enable CORS for all routes
+app.use(cors());
+
+app.use(express.json());
+app.use(express.static('public'));
+
+const io = require('socket.io')(httpServer, options);
 
 app.use('/openai', require('./routes/openaiRoutes'));
 
