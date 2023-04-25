@@ -4,6 +4,12 @@ const http = require('http').createServer(app);
 const cors = require('cors');
 const dotenv = require('dotenv').config();
 
+// Enable CORS for all routes
+app.use(cors());
+
+app.use(express.json());
+app.use(express.static('public'));
+
 const options = {
     cors: {
         origin: 'https://spanish-lab-client.vercel.app',
@@ -12,12 +18,6 @@ const options = {
     }
 };
 const io = require('socket.io')(http, options);
-
-
-// Enable CORS for all routes
-app.use(cors());
-app.use(express.json());
-app.use(express.static('public'));
 
 app.use('/openai', require('./routes/openaiRoutes'));
 
