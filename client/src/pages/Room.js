@@ -23,6 +23,11 @@ function Room() {
         { "question": "What is the animal eating?", "options": ["Hamburger", "Sushi", "Pizza", "Burrito"] },
         { "question": "Where is the animal eating?", "options": ["On the beach", "At School", "In The Mountains", "At the Lake"] },
     ]
+    const Preguntas = [
+        { "question": "¿De qué animal trata nuestra historia?", "options": ["perro", "gato", "león", "oso"] },
+        { "question": "¿Qué está comiendo el animal?", "options": ["hamburguesa", "sushi", "pizza", "burrito"] },
+        { "question": "¿Dónde está comiendo el animal?", "options": ["en la playa", "en la escuela", "en las montañas", "en el lago"] },
+    ]
 
     var isDone = false;
     var displayEnd = (promptIndex + 1 === Questions.length) ? true : false;
