@@ -3,18 +3,10 @@ const app = express();
 const http = require('http').createServer(app);
 const cors = require('cors');
 const dotenv = require('dotenv').config();
-// const axios = require('axios');
-// const { Configuration, OpenAIApi } = require("openai");
-// const configuration = new Configuration({
-//     apiKey: process.env.OPENAI_API_KEY,
-// });
-// const openai = new OpenAIApi(configuration);
 
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
 const options = {
     cors: {
-        origin: 'http://localhost:3000',
+        origin: 'https://spanish-lab-server.vercel.app/',
         methods: ['GET', 'POST']
     }
 };
