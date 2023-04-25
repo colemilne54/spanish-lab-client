@@ -6,7 +6,7 @@ const dotenv = require('dotenv').config();
 
 const options = {
     cors: {
-        origin: 'https://spanish-lab-client.vercel.app/',
+        origin: 'http://spanish-lab-client.vercel.app/',
         methods: ['GET', 'POST']
     }
 };
