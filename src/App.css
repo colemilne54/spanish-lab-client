@@ -270,6 +270,14 @@ input {
   color: #2F4B5D;
   width: 100%;
 }
+
+@media only screen and (max-width: 600px) {
+  .spanishLabLogo {
+    width: 15rem;
+    height: auto;
+  }
+}
+
 /*
 @media only screen and (max-width: 600px) {
 

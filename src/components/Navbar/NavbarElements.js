@@ -7,8 +7,6 @@ export const Nav = styled.nav`
   background: #2F4B5D;
   height: 85px;
   display: flex;
-  //justify-content: center;
-  //padding: 0.2rem calc((100vw - 1000px) / 2);
   z-index: 12;
 `;
 
@@ -32,8 +30,6 @@ export const Bars = styled(FaBars)`
   color: #808080;
 
   @media screen and (max-width: 768px) {
-    //display: block;
-    //position: absolute;
     top: 0;
     right: 0;
     transform: translate(-100%, 75%);
@@ -45,25 +41,9 @@ export const Bars = styled(FaBars)`
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  //margin-right: -24px;
-  /* Second Nav */
-  /* margin-right: 24px; */
-  /* Third Nav */
-  /* width: 100vw;
-white-space: nowrap; */
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-  //.spanishLabLogo{
-  //  margin-top: 220px;
-  //  width: 596px;
-  //  height: 970px;
-  //  align-content: center;
-  //  position: absolute;
-  //  bottom: 20%;
-  //  left: 32%;
-  //  //margin-left: 100px;
-  //}
+  // @media screen and (max-width: 768px) {
+  //   display: none;
+  // }
   /* The dropdown container */
   .dropdown {
     float: left;
@@ -105,25 +85,32 @@ white-space: nowrap; */
   .leftMenuBar{
     @media screen and (max-width: 600px) {
       position: absolute;
-      top: 10%;
-      left: 10%;
+      top: 2%;
+      left: 3%;
     }
     position: absolute;
     top: 3%;
     left: 2%;
   }
   .rightLogin{
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
     position: absolute;
     top: 5%;
     right: 2%;
   }
   .logoDiv{
+    @media screen and (max-width: 600px) {
+      position: absolute;
+      top: 10%;
+      left: 55%;
+      transform: translate(-50%, -50%);
+    }
     position: absolute;
     top: 2%;
     left: 39%;
   }
-  
-
 `;
 
 // import { FaBars } from "react-icons/fa";

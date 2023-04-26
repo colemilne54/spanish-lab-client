@@ -3,7 +3,7 @@ import logo from '../spanishLabLogo7.png' // Tell Webpack this JS file uses this
 
 function Header() {
     // Import result is the URL of your image
-    return <img src={logo} alt="Logo"  className="spanishLabLogo" />;
+    return <img src={logo} alt="Logo" className="spanishLabLogo" />;
 }
 
 export default Header;
