@@ -13,23 +13,21 @@ import CreateStory from "./pages/createStory"
 
 function App() {
   return (
-
       <Router>
         <div className="App">
           <Navbar />
           <Routes>
             <Route path="/join-room" exact element={<JoinRoom />} />
             <Route path="/room/:roomId" element={<Room />} />
-            <Route path = '/home'  element={<Home />} />
+            <Route path = '/home' element={<Home />} />
             <Route path = '/choose-a-theme' element = {<ThemePage />} />
             <Route path = '/login' element ={<Login />} />
-            <Route path = '/enter-code'  element={<EnterCode />} />
+            <Route path = '/enter-code' element={<EnterCode />} />
             <Route path= '/account' element={<Account />} />
             <Route path ='/create-story' element={<CreateStory />} />
           </Routes>
         </div>
       </Router>
-
   );
 }
 

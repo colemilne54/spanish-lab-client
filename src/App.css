@@ -9,12 +9,6 @@ html {
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   min-height: 100vh;
   display: flex;
@@ -28,16 +22,6 @@ html {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .loginNav {
   align-content: end;
 }
@@ -48,7 +32,6 @@ html {
   height: 450px;
   border-radius: 20px;
   padding: 20px;
-
 }
 
 .loginInputs {
@@ -287,3 +270,45 @@ input {
   color: #2F4B5D;
   width: 100%;
 }
+/*
+@media only screen and (max-width: 600px) {
+
+  html {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    padding: 10px;
+  }
+
+  .loginPage {
+    padding: 20px;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .roomId {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .columnDisplay {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .createQuestionsPage {
+    padding: 20px;
+  }
+} */
