@@ -5,7 +5,7 @@ import ImageComponent from './generateImage';
 
 const socket = io('https://spanish-lab-server.herokuapp.com');
 
-const popularAnswers = [];
+let popularAnswers = [];
 
 function Room() {
     const { roomId } = useParams();
@@ -18,6 +18,7 @@ function Room() {
     const [showImage, setShowImage] = useState(false);
     const [finalPrompt, setFinalPrompt] = useState('');
     const [showPopularAnswer, setPopularAnswer] = useState(false);
+    const [isReset, setIsReset] = useState(false);
     const Questions = [
         { "question": "What animal is our story about?", "options": ["Dog", "Cat", "Lion", "Bear"] },
         { "question": "What is the animal eating?", "options": ["Hamburger", "Sushi", "Pizza", "Burrito"] },
@@ -31,6 +32,14 @@ function Room() {
 
     var isDone = false;
     var displayEnd = (promptIndex + 1 === Preguntas.length) ? true : false;
+
+    // useEffect(() => {
+    //     console.log('here')
+    //     if(promptIndex == 0) {
+    //         console.log('there')
+    //         setFinalPrompt('');
+    //     }
+    // }, [finalPrompt]);
 
     useEffect(() => {
         socket.emit('joinRoom', roomId);
@@ -69,8 +78,9 @@ function Room() {
     const handleEndQuiz = () => {
         popularAnswers.push(popularAnswer());
         // setFinalPrompt(`A cartoon ${popularAnswers[0]} eating a ${popularAnswers[1]} ${popularAnswers[2]}`);
-        setFinalPrompt(`A ${popularAnswers[0]} de dibujos animados comiendo un ${popularAnswers[1]} ${popularAnswers[2]}`);
+        setFinalPrompt(`Un ${popularAnswers[0]} de dibujos animados comiendo un ${popularAnswers[1]} ${popularAnswers[2]}`);
         setShowImage(true);
+        popularAnswers = [];
     };
 
     const handleSubmit = (e) => {
