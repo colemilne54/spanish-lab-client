@@ -8,13 +8,13 @@ const Navbar = () => {
         <>
             <Nav>
                 <NavMenu>
-                    <NavLink to="/home" activeStyle>
+                    <NavLink to="/home">
                         Home
                     </NavLink>
-                    <NavLink to="/about" activeStyle>
+                    <NavLink to="/about">
                         <img src="https://uploads-ssl.webflow.com/57b4d56c1f986d4879b0574d/57be683a4177ba9b56ee367d_BSFsmall.png" width="118.5" height="53"></img>
                     </NavLink>
-                    <NavLink class = "ms-auto" to="/login" activeStyle>
+                    <NavLink class = "ms-auto" to="/login">
                         LOGIN
                     </NavLink>
                 </NavMenu>
