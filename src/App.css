@@ -153,12 +153,20 @@ form {
   padding: 100px;
 }
 
+
+
 .standardPage {
-  text-align: center;
-  padding: 175px;
-  align-items: center;
-  justify-content: center;
-  vertical-align: middle;
+  @media only screen and (max-width: 600px) {
+    padding: 2rem;
+    text-align: center;
+  }
+  @media only screen and (min-width: 600px) {
+    text-align: center;
+    padding: 175px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+  }
 }
 
 h1,
