@@ -130,7 +130,7 @@ function Room() {
                         </ul>
                     </div>
                     <div className="rightAlignedContainer bottomRightButton">
-                    {isTeacher && (
+                        {isTeacher && (
                             <div>
                                 {displayEnd ?
                                     <button className="primaryButton" type="button" onClick={handleEndQuiz}>
