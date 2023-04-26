@@ -30,7 +30,7 @@ function Room() {
     ]
 
     var isDone = false;
-    var displayEnd = (promptIndex + 1 === Questions.length) ? true : false;
+    var displayEnd = (promptIndex + 1 === Preguntas.length) ? true : false;
 
     useEffect(() => {
         socket.emit('joinRoom', roomId);
@@ -58,8 +58,8 @@ function Room() {
 
     const handleNextPrompt = () => {
         popularAnswers.push(popularAnswer());
-        console.log(promptIndex + " " + Questions.length)
-        if (promptIndex + 1 === Questions.length) {
+        console.log(promptIndex + " " + Preguntas.length)
+        if (promptIndex + 1 === Preguntas.length) {
             isDone = true;
         } else {
             socket.emit('nextPrompt', roomId);
@@ -68,7 +68,8 @@ function Room() {
 
     const handleEndQuiz = () => {
         popularAnswers.push(popularAnswer());
-        setFinalPrompt(`A cartoon ${popularAnswers[0]} eating a ${popularAnswers[1]} ${popularAnswers[2]}`);
+        // setFinalPrompt(`A cartoon ${popularAnswers[0]} eating a ${popularAnswers[1]} ${popularAnswers[2]}`);
+        setFinalPrompt(`A ${popularAnswers[0]} de dibujos animados comiendo un ${popularAnswers[1]} ${popularAnswers[2]}`);
         setShowImage(true);
     };
 
@@ -100,9 +101,9 @@ function Room() {
                 <div>
                     <h1>Room: {roomId}</h1>
                     <div className="columnDisplay">
-                        <h2>Prompt: {Questions[promptIndex].question}</h2>
+                        <h2>Prompt: {Preguntas[promptIndex].question}</h2>
                         <form className="question" onSubmit={handleSubmit}>
-                            {Questions[promptIndex].options.map((choice, index) => (
+                            {Preguntas[promptIndex].options.map((choice, index) => (
                                 <div key={index}>
                                     <input
                                         key={`prompt-${promptIndex}-choice-${index}`}

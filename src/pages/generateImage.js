@@ -21,7 +21,7 @@ function ImageComponent({ prompt }) {
     <div className ="standardPage">
       <h3>{prompt}</h3>
       {isLoading && <p>Loading...</p>}
-      {imageUrl && <img src={imageUrl} alt="Generated Image From Prompt"/>}
+      {imageUrl && <img src={imageUrl} alt="Generated From Prompt and OpenAI DALLE"/>}
       <br/>
       <button className = "primaryButton" onClick={fetchImage}>Generate Image</button>
     </div>

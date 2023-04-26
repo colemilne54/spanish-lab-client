@@ -1,10 +1,10 @@
 import React from "react";
-import {useNavigate } from "react-router-dom";
+// import {useNavigate } from "react-router-dom";
 const CreateStory = () => {
-    let navigate = useNavigate();
-    const routeChange = () => {
-        navigate('/create-story');
-    }
+    // let navigate = useNavigate();
+    // const routeChange = () => {
+    //     navigate('/create-story');
+    // }
     return (
         <div className="standardPage displayBlock createQuestionsPage">
             <h1>Create New Story</h1>

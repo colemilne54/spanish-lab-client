@@ -1,6 +1,5 @@
-import React, {useState} from "react";
-import {redirect, Route, Routes, useNavigate, withRouter} from "react-router-dom";
-import themePage from "./themePage";
+import React from "react";
+import {useNavigate } from "react-router-dom";
 
 const EnterCode = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -13,17 +12,17 @@ const EnterCode = () => {
         e.preventDefault();
         navigate(`/room/${roomId}`);
     };
-    function makeid(length) {
-        let result = '';
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        const charactersLength = characters.length;
-        let counter = 0;
-        while (counter < length) {
-            result += characters.charAt(Math.floor(Math.random() * charactersLength));
-            counter += 1;
-        }
-        return result;
-    }
+    // function makeid(length) {
+    //     let result = '';
+    //     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    //     const charactersLength = characters.length;
+    //     let counter = 0;
+    //     while (counter < length) {
+    //         result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    //         counter += 1;
+    //     }
+    //     return result;
+    // }
     return (
         <div className="standardPage">
             <h2>GO TO WWW.SPANISHLAB.COM/ENTERCODE</h2>
